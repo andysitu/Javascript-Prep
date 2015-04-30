@@ -12,7 +12,7 @@ _.map = function(list, iteratee, context) {
 		var arr =[];
 		{ 	for (var i = 0; i < list.length; i++) {
 			arr[i] = iteratee.call(context, list[i], i, list);
-			}
+			}	
 		}
 		return arr;
 	} else {
