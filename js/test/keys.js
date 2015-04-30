@@ -5,7 +5,6 @@ QUnit.test("keys Test", function( assert ) {
 	var test1 = ["one", "two", "three"];
 	var test2 = ["1", "2"];
 
-	console.log(list1 === test1);
 
 	for (var i = 0; i <= 3; i++) {
 		assert.equal(list1[i], test1[i], 

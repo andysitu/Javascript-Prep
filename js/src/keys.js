@@ -12,6 +12,5 @@ _.keys = function(obj) {
 	for (var par in obj) {
 		list.push(par);
 	}
-	console.log(list);
 	return list;
 }
