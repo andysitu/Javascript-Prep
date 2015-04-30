@@ -21,11 +21,11 @@ _.each = function(list, func, context) {
 //		var i, el = list[i];
 //		var funct = func(i, el, list);
 		 for (var i = 0; i < list.length; i++) {
-			func(list[i]);
+			func.call(context, list[i], i, list);
 		}
 	}   else {
-		for (var prop in list) {
-			func(list.prop);
+		for (var key in list) {
+			func.call(context, list.key, key, list);
 		}
 	} 
 };
