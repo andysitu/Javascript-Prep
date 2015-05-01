@@ -18,9 +18,9 @@
 */
 
 _.reduce = function(list, iteratee, memo, context) {
+	var sum = 0, i = 0;
 	// or toString.call(list)
 	if (Object.prototype.toString.call(list) == "[object Array]") {
-		var sum = 0, i = 0;
 		if (memo == undefined) {
 			i = 1;
 			memo = list[0];
