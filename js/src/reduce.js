@@ -18,7 +18,7 @@
 */
 
 _.reduce = function(list, iteratee, memo, context) {
-	var sum = 0, i = 0;
+	var i = 0;
 	// or toString.call(list)
 	if (Object.prototype.toString.call(list) == "[object Array]") {
 		if (memo == undefined) {
@@ -26,7 +26,7 @@ _.reduce = function(list, iteratee, memo, context) {
 			memo = list[0];
 		}
 		for ( ; i < list.length; i++) {
-			sum += iteratee.call(context, memo, list[i], i, list);
+			memo = iteratee.call(context, memo, list[i], i, list);
 		}
 	} else {
 		for (key in list) {
@@ -34,9 +34,9 @@ _.reduce = function(list, iteratee, memo, context) {
 				memo = list[key];
 				i++;
 			} else {
-				sum += iteratee.call(context, memo, list[key], key, list);
+				memo = iteratee.call(context, memo, list[key], key, list);
 			}
 		}
 	}
-	return sum;
+	return memo;
 };
