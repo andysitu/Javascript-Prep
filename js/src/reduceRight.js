@@ -9,16 +9,16 @@ _.reduceRight = function(list, iteratee, memo, context) {
 		else i = list.length -1;
 		for ( ; i >= 0; i--) {
 			memo = iteratee.call(context, memo, list[i], i, list);
-		}
+		}	
 	} else {
-		for (key in list) {
-			if (memo == undefined && i == 0){
-				memo = list[key];
-				i++;
-			} else {
-				sum += iteratee.call(context, memo, list[key], key, list);
-			}
-		}
+		var keyStor = Object.keys(list);
+		if (memo == undefined) {
+			i = keyStor.length -2;
+			memo = list[keyStor[keyStor.length-1]]
+		} else i = keyStor.length -1;
+		for ( ; i >= 0; i--) {
+			memo = iteratee.call(context, memo, list[keyStor[i]], keyStor[i], list);
+		}	
 	}
 	return memo;
 };
