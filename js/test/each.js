@@ -24,13 +24,19 @@ QUnit.test("Test for Each", function( assert ) {
 	var testObj = {};
 
 	
-	_.each(obj, function() {
-		for (var prop in obj) {
-			testObj[prop] = obj[prop];
-		}
-	});
+	_.each(obj, function(value, prop) {
+			return testObj[prop] = obj[prop];
+		});
+	
 
 	assert.deepEqual(testObj, obj, "objects each-fn should equal");
 	assert.notDeepEqual(testObj, {hello: 4242, bye: 4242424}, "Objects each-fn does not equal")
 
+
+	var obj1 = [1,2,3,4];
+	var test = [];
+	_.each(obj1, function(value, key){
+		test.push(value)});
+
+	assert.deepEqual(test, [1,2,3,4], "test");
 });

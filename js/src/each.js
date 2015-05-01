@@ -25,7 +25,7 @@ _.each = function(list, func, context) {
 		}
 	}   else {
 		for (var key in list) {
-			func.call(context, list.key, key, list);
+			func.call(context, list[key], key, list);
 		}
 	} 
 };
