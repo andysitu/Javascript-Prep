@@ -8,28 +8,18 @@ var list5 = _.map({test: 1, test2: 2, test3: 3}, function(value, key, list){
 })
 
 QUnit.test("Map Test", function( assert) {
-	for (var i = 0; i < list1.length; i++) {
-		assert.equal(list1[i], [3, 6, 9][i], 
+		assert.deepEqual(list1, [3, 6, 9], 
 			"Map testing with array [3, 6, 9]");
-	}
 
-	for (var i = 0; i <list2.length; i++) {
-		assert.equal(list2[i], [3,6,9][i],
+		assert.deepEqual(list2, [3,6,9],
 			"Map testing with objects & [3,6,9]");
-	}	
 
-	for (var i = 0; i <list3.length; i++) {
-		assert.equal(list3[i], [1,3,5][i],
-			"Map testing with objects, _.first for [1,3]");
-	}
+		assert.deepEqual(list3, [1,3,5],
+			"Map testing with objects, _.first for [1,3,5]");
 
-	for (var i = 0; i <list4.length; i++) {
-		assert.equal(list4[i], [0,1,2,3][i],
+		assert.deepEqual(list4, [0,1,2,3],
 			"Map testing, index value into array [0,1,2,3]");
-	}
 
-	for (var i = 0; i <list5.length; i++) {
-		assert.equal(list5[i], ["test", "test2", "test3"][i],
+		assert.deepEqual(list5, ["test", "test2", "test3"],
 			"Map testing, index value into array [0,1,2,3]");
-	}
 });	
