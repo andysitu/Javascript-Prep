@@ -3,7 +3,10 @@ _.size = function(list) {
 		return list.length;
 	}
 	else {
-		var keys = Object.keys(list);
-		return keys.length;
+		var count = 0;
+		for (keys in list) {
+			count++;
+		}
+		return count;
 	}
 };
