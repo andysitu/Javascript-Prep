@@ -10,4 +10,11 @@ QUnit.test("Testing for Bind", function( assert ) {
 	val = val();	
 
 	assert.equal(val, 25, "Testing object return value multipliy with argument for 25");
+
+	var func2 = function(one, two, three) { return this.a * one * two * three;};
+	var val1 = _.bind(func2, {a: 5}, 5, 7, 6);
+	val1 = val1();
+
+	assert.equal(val1, 1050, "Testing objects with multiple args to get 1050");
+
 });
