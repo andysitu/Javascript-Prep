@@ -13,15 +13,13 @@
 _.bind = function(func, obj, arg){
 	if (arguments.length > 3) {
 		arg = Array.prototype.slice.call(arguments, 2);
-		function funker() {
+		return function() {
 				return func.apply(obj, arg);
 		}
-		return funker;
 	} else {
-		function funk() {
+		return function() {
 			return func.call(obj, arg);
 		}
-		return funk;
 	}
 
 }
