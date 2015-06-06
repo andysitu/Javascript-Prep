@@ -9,7 +9,7 @@
  *
 */
 
-_.each = function(list, iteratee, context) {
+_.each = _.forEach = function(list, iteratee, context) {
 //	if (context === "undefined") 
 //		context = list; // or window/list?
 	if (Object.prototype.toString.call(list) === "[object Object]") {

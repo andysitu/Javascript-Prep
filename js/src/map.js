@@ -11,7 +11,7 @@
  *
 */
 
-_.map = function(list, iteratee, context) {
+_.map = _.collect = function(list, iteratee, context) {
 	var arr = [];
 	if (Object.prototype.toString.call(list) === "[object Object]") {
 		for (var key in list) {

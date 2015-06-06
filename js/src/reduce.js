@@ -10,7 +10,7 @@
  * finally a reference to the entire list.
 */
 
-_.reduce = function(list, iteratee, memo, context) {
+_.reduce = _.inject = _.foldl = function(list, iteratee, memo, context) {
 	var rec = Object.keys(list);
 	if (memo === undefined) {
 		memo = list[(rec[0])];
